@@ -1,0 +1,42 @@
+
+
+{% block title %}Hello ARTISANET!{% endblock %}
+
+{% block body %}
+
+
+</tbody>
+<table>
+
+        <thead>
+            <th> Numero </th>
+            <th> Nom  </th>
+           
+            <th> piece </th>
+            <th> modifier</th>
+            <th> supprimer </th>
+
+        </thead>
+        <tbody>
+        {% for formulaire in f %}  
+        <tr>
+            <td> {{formulaire.id}}  </td>
+            <td> {{formulaire.nom}}  </td>
+             
+                <td> {{formulaire.piece}}  </td>
+                <td>
+            <a class="btn btn-success" href="{{ path('modifier_formulaire',{'id':formulaire.id}) }}">Modifier</a>
+            </td>
+            <td>
+            <a class="btn btn-danger" href="{{ path('supprimer_formulaire',{'id':formulaire.id}) }}">Supprimer</a>
+            </td>
+
+          
+
+        </tr>  
+        {% endfor %}
+    </tbody>     
+    </table>   
+
+  
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'inscription.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+
+
+{{ form_start(registrationForm) }}
+<form action="#" class="sign-up-form">
+          <img src="img/logoo.png" width="150">
+            <h2 class="title">Inscription</h2>
+            
+            <div class="input-field"  >
+              <i class="fas fa-envelope" placeholder=""></i>
+              
+              {{ form_widget(registrationForm.email) }}
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+             {{ form_widget(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+            </div>
+            <div>
+            {{ form_row(registrationForm.agreeTerms) }}
+             </div>
+            {{ form_widget(registrationForm.Envoyer,{'attr':{'class':'btn btn-primary'}}) }}
+         
+          
+            <p class="social-text">Connecter avec les réseaux sociaux</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+         
+            
+             {{ form_end(registrationForm) }}
+            </form>
+{% endblock %}

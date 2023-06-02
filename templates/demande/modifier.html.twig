@@ -1,0 +1,39 @@
+{% extends 'admin_demande.html.twig' %}
+{%block title %}{{demande.nom}}{% endblock %}
+{% block body %}
+
+<div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Ajouter Une Demande</h6>
+                            {{ form_start(f) }}
+                            
+                             
+                                <div class="mb-3">
+                                     {{ form_label(f.nom) }}
+                                     {{ form_widget(f.nom) }}
+                                    
+                                </div>
+                                <div class="mb-3">
+                                      {{ form_label(f.somme) }}
+                                     {{ form_widget(f.somme) }}
+                                </div>
+                                <div class="mb-3 form-check">
+                                        {{ form_label(f.piece) }}
+                        {{ form_widget(f.piece) }}
+                                </div>
+                               <div class="mb-3 form-check">{{ form_widget(f.Envoyer) }}</div>
+                                {{ form_rest(f) }}
+                             {{ form_end(f) }}
+                        </div>
+                    </div>
+                     </div>
+                    </div>
+
+
+
+
+       
+{% endblock %}
+

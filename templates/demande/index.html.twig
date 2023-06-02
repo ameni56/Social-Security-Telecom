@@ -1,0 +1,31 @@
+{% extends 'user_template.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div id="portfolio" class="our-portfolio section">
+    <div class="container">
+    
+      <div class="row">
+      {% for demande in d %} 
+      {% if demande |length  !=0 %} 
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+              <div class="hidden-content">
+                <h4>{{demande.type}}</h4>
+                <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
+              </div>
+              <div class="showed-content">
+                <img src="{{asset('template_user/assets/images/logoo.png')}}" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}

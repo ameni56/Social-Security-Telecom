@@ -1,0 +1,38 @@
+ {% extends 'user_demande_template.html.twig' %}
+{% block body %}
+ <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="left-image wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <img src="{{asset('template_user/assets/images/about-left-image.png')}}" alt="person graphic">
+          </div>
+        </div>
+
+        <div class="col-lg-8 align-self-center">
+          <div class="services">
+         
+            <div class="row">
+             {% for demande in d %}  
+              <div class="col-lg-6">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="icon">
+                    <img src="{{asset('template_user/assets/images/service-icon-01.png')}}" alt="reporting">
+                  </div>
+                  <div class="right-text">
+                    <h4>{{demande.nom}}</h4>
+                    <p>Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter</p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              </div>
+              
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  {% endblock %}

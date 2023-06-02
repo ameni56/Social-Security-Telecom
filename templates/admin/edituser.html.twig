@@ -1,0 +1,38 @@
+
+
+{% extends 'admin_demande.html.twig' %}
+{%block title %}{% endblock %}
+{% block body %}
+
+<div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Modifier Utilisateur</h6>
+                            {{ form_start(userForm) }}
+                            
+                             
+                                <div class="mb-3">
+                                     {{ form_label(userForm.email) }}
+                                     {{ form_widget(userForm.email) }}
+                                    
+                                </div>
+                                <div class="mb-3">
+                                      {{ form_label(userForm.roles) }}
+                                     {{ form_widget(userForm.roles) }}
+                                </div>
+                               
+                               <div class="mb-3 form-check">{{ form_widget(userForm.Valider) }}</div>
+                                {{ form_rest(userForm) }}
+                             {{ form_end(userForm) }}
+                        </div>
+                    </div>
+                     </div>
+                    </div>
+
+
+
+
+       
+{% endblock %}
+

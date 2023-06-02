@@ -1,0 +1,24 @@
+
+
+
+{% block body %}
+
+{{ form_start(f) }}
+{{form_widget(f)}}
+{% if app.request.attributes.get('_route') == 'modifier_formulaire' %}
+<h2>Images</h2>
+{% for image in formulaire.images %}
+    <div>
+    <img src="{{ asset('/uploads/'~image.name) }}" alt="Image" width="150">
+    <a href="{{path('supprimer_image',{id: image.id})}}"
+    data-delete data-token="{{csrf_token('delete' ~ image.id)}}">Supprimer</a>
+   </div>
+    {% endfor %}
+
+{% endif %}
+<button class="btn">{{button_label|default('Save')}}</button>
+{{ form_end(f)}}
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/images.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,59 @@
+
+
+
+
+
+{% extends 'admin_liste_demande.html.twig' %}
+{% block body %}
+  <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    
+                    <div class="col-12">
+                        <div class="bg-light rounded h-100 p-4">
+                          <h6 class="mb-4">Liste des demandes</h6>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Numéro</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Role</th>
+                                        <th scope="col">Modifier</th>
+                                      
+                                    </tr>
+                                </thead>
+                                <tbody>
+                               {% for user in users %}
+                                    <tr>
+                                        
+                                        <td>{{user.id}}</td>
+                                        
+                                        <td>{{user.email}}</td>
+                                        <td>
+                                            {% for role in user.roles %}
+                                            {% if role =="ROLE_USER" %}
+                                            Utilisateur
+                                            {% elseif role=="ROLE_EDITOR" %}
+                                            Editeur
+                                            {% elseif role=="ROLE_ADMIN" %}
+                                            Admin
+                                            {% endif %}
+                                            {% endfor %}</td>
+                                          <td><a class="btn btn-success" href="{{path('admin_modifier_utilisateur',{'id':user.id})}}">Modifier</a>
+                                          </td>
+                                          
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                    <td colspan=5> il n'ya pas d'utilisateurs</td>
+                                    </tr>
+                                    {% endfor %}
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                        
+                   
+                </div>
+            </div>
+            {% endblock %}
